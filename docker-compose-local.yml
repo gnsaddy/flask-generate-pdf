@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: webapp:1.0
+    container_name: web
+    restart: always
+    volumes:
+      - '.:/usr/src/app'
+    env_file:
+      - .env.local
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+  db:
+    container_name: pg_container
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: test_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      GUNICORN_THREADS: 1
+      GUNICORN_WORKERS: 10
+      PGADMIN_DEFAULT_EMAIL: gnsaddy@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    ports:
+      - "5050:80"
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+
+volumes:
+  local_pgdata:
+  pgadmin-data:
