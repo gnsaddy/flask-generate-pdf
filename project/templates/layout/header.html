@@ -1,0 +1,40 @@
+<div class="page">
+    <div class="view">
+        <table style="width:230mm; height: 360mm;">
+            <thead>
+            <tr>
+                <td>
+                    <div class="float-end">
+                        <img src="https://www.microland.com/assets/images/logo.svg" alt="cover-image" width="150"
+                             height="20"/>
+                    </div>
+                    <br/>
+                    <hr/>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    {% block content %}
+
+                    {% endblock %}
+                </td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+            <tr>
+                <td>
+                    <hr/>
+                    <footer class="float-end">
+                        {% block footer %}
+
+                        {% endblock %}
+                    </footer>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>

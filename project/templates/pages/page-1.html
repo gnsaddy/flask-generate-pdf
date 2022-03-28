@@ -1,0 +1,19 @@
+{% extends "layout/header.html" %}
+
+{% block main %}
+    {% block content %}
+        {{ super() }}
+        {# page content #}
+        <canvas id="myChart1" width="800" height="400"></canvas>
+        <br/>
+        <canvas id="myChart2" width="800" height="400"></canvas>
+        <br/>
+    {% endblock %}
+
+    {# page footer #}
+    {% block footer %}
+        {{ super() }}
+        Page 1
+    {% endblock %}
+
+{% endblock %}
