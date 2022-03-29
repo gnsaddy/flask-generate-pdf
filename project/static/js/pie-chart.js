@@ -1,6 +1,5 @@
 // Global parameters:
 // do not resize the chart canvas when its container does (keep at 600x400px)
-Chart.defaults.global.responsive = false;
 
 new Chart(document.getElementById('myChart1'), {
     type: 'line',
@@ -289,3 +288,23 @@ new Chart(document.getElementById('myChart8').getContext('2d'), {
         }
     }
 });
+
+new Chart(
+    document.getElementById("myChart9"), {
+        "responsive": false,
+        "type": "radar",
+        "data": {
+            "labels": ["January", "February", "March", "April", "May", "June", "July"],
+            "datasets": [{
+                "label": "My First Dataset",
+                "data": [65, 59, 80, 81, 56, 55, 40],
+                "fill": false,
+                "borderColor": "rgb(75, 192, 192)",
+                "lineTension": 0.1
+            }]
+        },
+        "options": {
+            animation: false
+        }
+    }
+);

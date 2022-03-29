@@ -10,18 +10,17 @@
 {% endblock %}
 {% block title %} Index Page {% endblock %}
 
-{# cover page#}
-{% include 'pages/cover-page.html' %}
+{% block main %}
+    {% include "pages/page-1.html" %}
+    {% include "pages/page-2.html" %}
+    {% include "pages/page-3.html" %}
+    {% include "pages/page-4.html" %}
+{% endblock %}
 
-
-{% include 'pages/page-1.html' %}
-
-{% include 'pages/page-2.html' %}
 
 {# script files #}
 {% block script %}
     {{ super() }}
-
     <script
             src="{{ url_for('static', filename='js/pie-chart.js', _external=True) }}"
             type="application/javascript"
