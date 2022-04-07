@@ -6,20 +6,26 @@ import colors
 from flask import Flask, jsonify, request, redirect, g
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
+from project import settings
+
+
+logging.basicConfig(level=logging.DEBUG,
+                    format=f'%(asctime)s %(levelname)s %(name)s: \n%(message)s \n')
+
 
 app = Flask(__name__, static_url_path='',
             static_folder='static',
             template_folder='templates')
 
 db = SQLAlchemy(session_options={'autocommit': False, 'autoflush': True})
-app.secret_key = 'pythonsecretforflaskpdf'
+app.secret_key = settings.SECRET
 
 
 # used for printing error messages
 def print_flush(*args):
-    """ Console output:- """
+    print(" ********** start ********** ", flush=True)
     print(*args, flush=True)
-    print(print_flush.__doc__)
+    print(" ********** end ********** ", flush=True)
 
 
 def create_app():

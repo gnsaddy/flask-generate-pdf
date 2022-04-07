@@ -1,0 +1,52 @@
+{% extends "base.html" %} {% block head %} {{ super() }}
+
+{% endblock %} {% block title %} Index Page {% endblock %}
+
+<div class="shadow-lg">
+  {% block main %}
+  <div>
+    {{ response }}
+    <div class="card shadow">
+      <div class="card-header">
+        <h3>Automation ITPA DevTest Infra </h3>
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Tenant Id</td>
+              <td>87469724sjfkd876</td>
+            </tr>
+            <tr>
+              <td>Account</td>
+              <td>Automation ITPA DevTest Infra</td>
+            </tr>
+            <tr>
+              <td>Owner</td>
+              <td>f8762348-sdfvjhv873-87687ksbd</td>
+            </tr>
+            <tr>
+              <td>Total Run</td>
+              <td>21 times</td>
+            </tr>
+            <tr>
+              <td>Last run at</td>
+              <td>Feb 04, 2022 09:50 AM</td>
+            </tr>
+            <tr>
+              <td>Audit score</td>
+              <td>80%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>
+
+{# script files #} {% block script %} {{ super() }}
+<script src="{{ url_for('static', filename='js/pie-chart.js', _external=True) }}"
+  type="application/javascript"></script>
+
+{% endblock %}

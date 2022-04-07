@@ -1,4 +1,4 @@
-version: '3.8'
+version: '3.3'
 services:
   web:
     build:
@@ -13,3 +13,4 @@ services:
       - .env.local
     ports:
       - "5000:5000"
+    network_mode: host

@@ -43,8 +43,6 @@ ENV PYTHONUNBUFFERED 1
 # Setup app config
 ENV FLASK_ENV=local
 
-RUN #apt-get install -y wkhtmltopdf
-
 RUN pip install pdfkit
 RUN apt-get autoremove && apt-get clean
 RUN pip install --upgrade pip
